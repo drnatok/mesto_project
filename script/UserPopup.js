@@ -1,4 +1,4 @@
-export class UserPopup extends Popup{
+class UserPopup extends Popup{
     constructor(element, userName, userNameTitle, about, userProfessionTitle, userInfo, api) {
         super(element);
         this.userName = userName;

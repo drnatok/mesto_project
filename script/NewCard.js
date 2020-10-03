@@ -1,4 +1,4 @@
-export class NewCard extends Popup {
+class NewCard extends Popup {
     constructor(element, form) {
         super(element);
         this.form = form;
