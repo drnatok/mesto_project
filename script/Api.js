@@ -1,4 +1,4 @@
-export class Api {
+class Api {
     constructor(options) {
         this.options = options;
     }

@@ -1,4 +1,4 @@
-export class PhotoPopup extends Popup{
+class PhotoPopup extends Popup{
     constructor(element) {
         super(element);
         this.popupPhotoSrc = document.querySelector('.popup__image');
