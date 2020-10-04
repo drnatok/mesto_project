@@ -1,4 +1,6 @@
-class UserPopup extends Popup{
+import {Popup} from './Popup.js';
+
+export class UserPopup extends Popup{
     constructor(element, userName, userNameTitle, about, userProfessionTitle, userInfo, api) {
         super(element);
         this.userName = userName;
@@ -17,11 +19,7 @@ class UserPopup extends Popup{
             if(event.target.classList.contains('popup__button') || event.type === 'submit'){
             event.preventDefault();
             this.userInfo.updateUserInfo(this.userName, this.about)
-            /*
-             Надо исправить:
-             - Модальное окно закроется даже если запрос не выполнится +
-            */
-        }
+              }
             else if (event.target.classList.contains('popup')) {
             super.close();
         };

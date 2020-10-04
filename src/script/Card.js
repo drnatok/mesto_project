@@ -1,4 +1,4 @@
-class Card {
+export class Card {
 
     constructor(name, link, photoPopup) {
       this.remove = this.remove.bind(this);

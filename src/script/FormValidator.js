@@ -1,4 +1,4 @@
-class FormValidator {
+export class FormValidator {
   constructor(popup) {
     this.popup = popup;
     this.form = this.popup.querySelector('form');
@@ -56,21 +56,6 @@ class FormValidator {
             }
           }
         } else {
-          // можно лучше: Для валидации используйте кастомный метод validation
-          // https: //developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation#Constraint_API%27s_element.setCustomValidity() 
-          // на русском https: //msiter.ru/tutorials/javascript/js_validation 
-          // на русском https://htmlacademy.ru/blog/useful/html/form-validation-techniques 
-          // на английском очень хорошая статья с примерами https://css-tricks.com/form-validation-part-2-constraint-validation-api-javascript/ 
-          // 
-          // как пример, если вы установите  <input type="text" min="10" max="100" >
-          // то сразу сможете определить что текст слишком короткий, например так: 
-          //  
-          // if (validity.tooShort) { 
-          // // Значение слишком короткое 
-          // }
-          // if (validity.tooLong) { 
-          // // Значение слишком длинное 
-          // }
             if((inputValueLength && inputValueLength < 2) || inputValueLength > 30) {
               errorMessage.textContent = errors.valueLengthError;
                 if(!hasErrors) {

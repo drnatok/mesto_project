@@ -1,5 +1,18 @@
+
+/*подключаю модули*/
+import "./pages/index.css";
+import {Api} from './script/Api.js';
+import {Card} from './script/Card.js';
+import {CardList} from './script/CardList.js';
+import {FormValidator} from './script/FormValidator.js';
+import {NewCard} from './script/NewCard.js';
+import {PhotoPopup} from './script/PhotoPopup.js';
+import {Popup} from './script/Popup.js';
+import {UserInfo} from './script/UserInfo.js';
+import {UserPopup} from './script/UserPopup.js';
+
+
 /* Переменные   */
-(function() {
 
 const formAdd = document.forms.new;
 const name = formAdd.elements.name;
@@ -15,7 +28,7 @@ const userName = formUser.elements.username;
 const about = formUser.elements.about;
 
 const api = new Api({
-  baseUrl: 'https://praktikum.tk/cohort12',
+  baseUrl: NODE_ENV==='development' ? 'http://praktikum.tk/cohort12' : 'https://praktikum.tk/cohort12',
   headers: {
     authorization: 'c77bfe9f-dc79-46a2-a314-5ee92c97d573',
     'Content-Type': 'application/json'
@@ -32,11 +45,6 @@ const popupUserInfo = new Popup(popupEdit);
 const userInfo = new UserInfo(userName, userNameTitle, about, userProfessionTitle, api, popupUserInfo);
 const userPopup = new UserPopup(popupEdit, userName, userNameTitle, about, userProfessionTitle, userInfo, api)
 const addCardPopup = new NewCard(popupAdd, formAdd);
-/*
-  Можно лучше:
-  - Назвать класс используя Popup, так как NewCard является сущностью Popup.
-*/
-
 const userInfoPopupValidation = new FormValidator(popupEdit);
 const addCardPopupValidation = new FormValidator(popupAdd);
 
@@ -66,16 +74,4 @@ formAdd.addEventListener('submit', (event) => {
 })
 
 
-})();
 
-/*
- Что понравилось:
- - Реализованы все классы
- - Порядок в index.js и в коде в целом
- - Правильная обработка ошибок api
- Можно лучше:
- - Реализовать дополнительные методы в api для:
-  - Добавления карточки
-  - Установки/снятия лайка
-  - Добавления аватарки
-*/

@@ -1,11 +1,7 @@
-class UserInfo {
+export class UserInfo {
     constructor(userName, userNameTitle, about, userProfessionTitle, api, popup) {
 
       this.userName = userName;
-      /*
-       Можно лучше:
-       - Удалить неиспользуемые свойства
-      */
       this.userNameTitle = userNameTitle;
       this.about = about;
       this.userProfessionTitle = userProfessionTitle;

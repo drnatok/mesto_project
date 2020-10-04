@@ -1,4 +1,6 @@
-class NewCard extends Popup {
+import {Popup} from './Popup.js';
+
+export class NewCard extends Popup {
     constructor(element, form) {
         super(element);
         this.form = form;
