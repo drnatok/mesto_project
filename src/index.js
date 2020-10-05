@@ -28,7 +28,7 @@ const userName = formUser.elements.username;
 const about = formUser.elements.about;
 
 const api = new Api({
-  baseUrl: NODE_ENV==='development' ? 'http://praktikum.tk/cohort12' : 'https://praktikum.tk/cohort12',
+  baseUrl: NODE_ENV==='development' ? 'http://nomoreparties.co/cohort12' : 'https://nomoreparties.co/cohort12',
   headers: {
     authorization: 'c77bfe9f-dc79-46a2-a314-5ee92c97d573',
     'Content-Type': 'application/json'
